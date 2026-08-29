@@ -1,0 +1,2 @@
+# Add ML dependencies here, e.g. pandas, scikit-learn
+# Keep this file minimal; do not add real patient data or heavy deps yet.
