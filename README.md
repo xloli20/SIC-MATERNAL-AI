@@ -1,4 +1,4 @@
-# MaternalAI (SIC Maternal AI)
+# MaternalAI
 
 Repository scaffold for a maternal health risk prediction system. This monorepo contains:
 
@@ -9,4 +9,3 @@ Repository scaffold for a maternal health risk prediction system. This monorepo 
 - `docker-compose.yml` and Dockerfiles for local development
 
 Follow the folders for implementation details. No models or sensitive data included.
-# SIC-MATERNAL-AI
