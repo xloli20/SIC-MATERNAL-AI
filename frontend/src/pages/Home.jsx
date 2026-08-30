@@ -1,5 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export default function Home() {
-  return <div>Welcome to MaternalAI</div>
+  return <div>Welcome to MaternalAI</div>;
 }
