@@ -36,10 +36,10 @@ Answer her naturally based on her specific numbers. Be conversational and warm. 
     
     def generate_chat_response(self, data: ChatRequest) -> ChatResponse:
         try:
-            user_id = id(data)
+            patient_key = f"{data.patient_data.age}_{data.patient_data.systolic_bp}_{data.patient_data.diastolic_bp}_{data.patient_data.blood_sugar}"
             
-            if user_id not in self.first_message:
-                self.first_message[user_id] = True
+            if patient_key not in self.first_message:
+                self.first_message[patient_key] = True
                 response_text = self.generate_initial_response(data.patient_data, data.risk_level)
             else:
                 response_text = self.answer_user_question(data.patient_data, data.risk_level, data.message)
