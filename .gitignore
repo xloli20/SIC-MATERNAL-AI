@@ -166,3 +166,6 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Dataset
+ml/dataset/Maternal Health Risk Data Set.csv
