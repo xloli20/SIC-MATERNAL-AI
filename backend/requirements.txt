@@ -7,3 +7,5 @@ xgboost
 joblib
 google-generativeai
 python-dotenv
+imbalanced-learn
+xgboost
