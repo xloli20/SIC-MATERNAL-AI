@@ -46,12 +46,28 @@ const Chatbot = () => {
       };
       setMessages((previous) => [...previous, botMessage]);
     } catch (error) {
+      const status = error.response?.status;
+      const detail = error.response?.data?.detail;
+
+      let errorMessage =
+        "I’m unable to connect to the chatbot service right now. Please try again later.";
+
+      if (status === 422) {
+        if (Array.isArray(detail)) {
+          errorMessage =
+            "Some information required for the chatbot is missing or invalid.";
+        } else {
+          errorMessage = "The information sent to the chatbot is invalid.";
+        }
+      } else if (status === 500) {
+        errorMessage =
+          "The chatbot service is currently unavailable. Please try again later.";
+      }
+
       const botMessage = {
         id: Date.now() + 1,
         sender: "bot",
-        text:
-          error.response?.data?.detail ||
-          "I’m unable to connect to the chatbot service right now. Please try again later.",
+        text: errorMessage,
       };
       setMessages((previous) => [...previous, botMessage]);
     } finally {
